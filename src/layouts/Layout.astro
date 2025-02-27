@@ -12,11 +12,18 @@
 	</body>
 </html>
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
+<style is:global>
+	/* the props */
+	@import "open-props/style";
+	@import "open-props/normalize/light";
+
+	body{
+		padding-inline: var(--size-3);
 	}
+
+	section{
+		margin-block: var(--size-6);
+	}
+
+
 </style>

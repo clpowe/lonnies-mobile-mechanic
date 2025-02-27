@@ -12,7 +12,9 @@
 	},
 	"dependencies": {
 		"@astrojs/cloudflare": "^12.2.2",
-		"astro": "^5.3.1"
+		"astro": "^5.3.1",
+		"lightningcss": "^1.29.1",
+		"open-props": "^1.7.13"
 	},
 	"devDependencies": {
 		"@cloudflare/workers-types": "^4.20250224.0",

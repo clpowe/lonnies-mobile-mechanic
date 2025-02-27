@@ -1,11 +1,112 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const why = [
+	{
+		title: "Speed & Convenience",
+		description: "Car trouble can happen anywhere, anytime. That’s why we bring fast, reliable mobile auto repair in Tampa straight to you—whether you're at home, work, or stuck on the road. No need for a tow, no waiting at a shop—we fix it where it sits so you can get back on the road faster.",
+	},
+	{
+		title: "Affordable Pricing",
+		description: "Quality repairs shouldn’t break the bank. Our regular service calls start at just $50, with after-hours service at $75. Need help outside a 50-mile radius? No problem—just a small $25 travel fee applies. We provide upfront, transparent pricing with no hidden fees.",
+	},
+	{
+		title: "Top-Quality Repairs",
+		description: "We take pride in delivering expert mobile mechanic services in Tampa without cutting corners. Whether it’s a quick fix or a complex repair, our skilled mechanics use top-tier tools and parts to ensure your vehicle runs smoothly and safely. Affordable doesn’t mean low-quality—it means you get the best value for your money.",
+	}
+]
+
+const services = [{
+	title: "Break Repair",
+	description: "Don't let brake issues slow you down. We'll fix them on the spot!",
+},{
+	title: "Tire Repair",
+	description: "Flat tire? We’ve got you covered with quick tire replacements or repairs.",
+},{
+	title: "Oil Change",
+	description: "Get your oil changed without leaving home or work.",
+},
+{
+	title: "Auto Diagnostic Service",
+	description: "Our experts can diagnose issues and get you back on the road swiftly.",
+},
+{
+	title: "Transmission Repair",
+	description: "If you're having transmission issues, we’re equipped to fix it on-site.",
+},
+{
+title:"Fleet Service",
+description:"Managing a fleet? We handle maintenance and repairs for trucks and commercial vehicles"
+}]
+
+const testimonials = [
+	{
+		name: "John Doe",
+		review: "I had a flat tire and Lonnies Mobile Mechanic got me back on the road in no time. Highly recommended!"
+	},
+	{
+		name: "Jane Smith",
+		review: "My car broke down, and Lonnies Mobile Mechanic fixed it in under an hour. Great service!"
+	},
+	{
+		name: "Bob Johnson",
+		review: "I needed a quick oil change, and Lonnies Mobile Mechanic was prompt and efficient. Highly satisfied!"
+	},
+	{
+		name: "Emily Davis",
+		review: "My car needed a tune-up, and Lonnies Mobile Mechanic provided expert advice. Great value for money!"
+	}
+]
 ---
 
 <Layout>
-	<Welcome />
+	<section>
+		<h1>Lonnies Mobile Mechanic</h1>
+		<h2>Mobile Auto Repair in Tampa – We Fix It Where It Sits!</h2>
+		<p>At Lonnies Mobile Mechanic, we bring affordable mobile auto repair in Tampa right to your doorstep. SAVE YOUR MONEY and SAY NO TO THE TOW</p>
+		<a href="#">Schedule an Appointment</a>
+		<a href="#">Call 813-770-0044</a>
+	</section>
+	
+	<section>
+		<h2>Why Choose Lonnie's Mobile Mechanic?</h2>
+		<a href="#">Schedule an Appointment</a>
+		<a href="#">Browse Services</a>
+		<ul>
+			{why.map((item) => (
+				<li>
+					<h3>{item.title}</h3>
+					<p>{item.description}</p>
+				</li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Our Services</h2>
+		<p>We specialize in a variety of mobile auto repair services throughout Tampa, including:</p>
+		<a href="#">Schedule an Appointment</a>
+		<ul>
+			{services.map((item) => (
+				<li>
+					<h3>{item.title}</h3>
+					<p>{item.description}</p>
+				</li>
+			))}
+		</ul>
+	</section>
+
+	<section>
+		<h2>Testimonials</h2>
+		<p>Check out our Tampa mobile mechanic reviews to see why we’re trusted by so many</p>
+		<a href="#">Schedule an Appointment</a>
+		<ul>
+			{testimonials.map((item) => (
+				<li>
+					<h3>{item.name}</h3>
+					<p>{item.review}</p>
+				</li>
+			))}
+		</ul>
+	</section>
 </Layout>
