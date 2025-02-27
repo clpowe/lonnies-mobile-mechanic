@@ -57,9 +57,33 @@ const testimonials = [
 		review: "My car needed a tune-up, and Lonnies Mobile Mechanic provided expert advice. Great value for money!"
 	}
 ]
+
+const FAQs =[
+	{
+		question: "What areas do you serve?",
+		answer: "We provide mobile auto repair in Tampa and surrounding areas. If you're over 50 miles away, there is a $25 service fee for extended travel."
+	},
+	{
+		question: "How much does a mobile mechanic service cost?",
+		answer: "Regular service calls: $50 (during normal business hours) After 5 PM: $75 Over 50 miles from our location: Additional $25 travel fee"
+	},
+	{
+		question: "Do you offer emergency mobile auto repair in Tampa?",
+		answer: "Yes! We provide emergency mobile auto repair to get you back on the road quickly. Call us anytime for fast assistance."
+	},
+	{
+		question: "What types of repairs do you handle?",
+		answer: "We offer a full range of mobile mechanic services, including: Mobile brake repair, Mobile tire repair, Car battery replacement,Engine and transmission repair, Oil changes and maintenance, Fleet service for trucks and commercial vehicles,Auto diagnostics and troubleshooting"
+	},
+	{
+		question: "How do I get a price quote?",
+		answer: "Call us for a free mobile auto repair quote—we provide transparent pricing with no hidden fees."
+	}
+]
 ---
 
-<Layout>
+<Layout title="Lonnies Mobile Mechanic">
+	<main class="content-grid">
 	<section>
 		<h1>Lonnies Mobile Mechanic</h1>
 		<h2>Mobile Auto Repair in Tampa – We Fix It Where It Sits!</h2>
@@ -109,4 +133,25 @@ const testimonials = [
 			))}
 		</ul>
 	</section>
+
+	<section>
+		<h2>FAQs</h2>
+		<p>Frequently Asked Questions</p>
+		{
+			FAQs.map((item) => (
+				<div>
+					<h5>{item.question}</h5>
+					<p>{item.answer}</p>
+				</div>
+			))
+		}
+	</section>
+
+	<section>
+		<h2>Call Us Now</h2>
+		<p>Lonnies Mobile Mechanic</p>
+		<p>We Fix It Where It Sits</p>
+		<p>813-770-0044</p>
+	</section>
+	</main>
 </Layout>
