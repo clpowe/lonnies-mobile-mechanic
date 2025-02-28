@@ -20,4 +20,5 @@ export default defineConfig({
     },
 
     integrations: [robotsTxt(), sitemap()],
+    site: "lonnies-mobile-mechanic.pages.dev"
 })
