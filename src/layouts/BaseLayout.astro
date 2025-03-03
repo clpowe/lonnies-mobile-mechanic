@@ -1,10 +1,12 @@
 ---
 import BaseHead from './BaseHead.astro';
+import Nav from '@/components/Nav.astro';
 ---
 
 <!doctype html>
 <html lang="en">
 <BaseHead {...Astro.props}/>
+  <Nav/>
 	<body>
 	    <slot />
 	</body>
