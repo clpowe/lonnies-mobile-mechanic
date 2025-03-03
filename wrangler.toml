@@ -6,4 +6,4 @@ command = "bun run build"
 watch_dir = "src"
 
 [env.production]
-main = "dist/index.js"
+main = "dist/_worker.js"
