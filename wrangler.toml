@@ -1,0 +1,9 @@
+name = "Lonnies Mobile Mechanics"
+compatibility_date = "2024-03-03"
+
+[build]
+command = "bun run build"
+watch_dir = "src"
+
+[env.production]
+main = "dist/index.js"
