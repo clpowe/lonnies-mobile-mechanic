@@ -1,6 +1,7 @@
 export const baseData = {
   title: "Lonnies Mobile Mechanic",
-  description: "Mobile Auto Repair in Tampa – We Fix It Where It Sits!",
+  description:
+    "Lonnies Mobile Mechanic is a mobile auto repair shop in Tampa, Florida. We offer affordable repairs for your car, truck, or commercial vehicle. Our team of experts is here to help you save money and get your vehicle fixed in no time.",
 };
 
 export const socialData = [

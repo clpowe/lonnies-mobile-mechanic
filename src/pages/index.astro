@@ -1,7 +1,7 @@
 ---
-import Link from '@/components/ui/Link.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Heading from '@/components/ui/Heading.astro'
+import Hero from '@/components/home/Hero.astro'
 
 const why = [
 	{
@@ -105,22 +105,8 @@ const FAQs = [
 ]
 ---
 
-<BaseLayout
-	title='Lonnies Mobile Mechanic'
-	description='Lonnies Mobile Mechanic is a mobile auto repair shop in Tampa, Florida. We offer affordable repairs for your car, truck, or commercial vehicle. Our team of experts is here to help you save money and get your vehicle fixed in no time.'>
-	<section>
-		<Heading tag='h1' size='h6'>Lonnies Mobile Mechanic</Heading>
-		<Heading tag='h2' size='h1'
-			>Mobile Auto Repair in Tampa – We Fix It Where It Sits!</Heading
-		>
-		<p>
-			At Lonnies Mobile Mechanic, we bring affordable mobile auto repair in
-			Tampa right to your doorstep. SAVE YOUR MONEY and SAY NO TO THE TOW
-		</p>
-		<Link href='#'>Schedule an Appointment</Link>
-		<Link href='tel:813-770-0044'>Call 813-770-0044</Link>
-	</section>
-
+<BaseLayout>
+	<Hero />
 	<section>
 		<Heading tag='h2' size='h2'>Why Choose Lonnie's Mobile Mechanic?</Heading>
 		<a href='#'>Schedule an Appointment</a>
