@@ -1,0 +1,52 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+
+const headingOptions = {
+	h1: 'xxl',
+	h2: 'xl',
+	h3: 'lg',
+	h4: 'md',
+	h5: 'sm',
+	h6: 'xs'
+}
+
+interface Props extends HTMLAttributes<'h1'> {
+	tag: keyof typeof headingOptions
+	size: keyof typeof headingOptions
+}
+
+const { tag, size } = Astro.props
+const TagName = tag
+---
+
+<TagName class:list={['default', headingOptions[size]]}>
+	<slot />
+</TagName>
+
+<style>
+	.default {
+		line-height: 1.1;
+	}
+
+	.xxl {
+		font-size: var(--font-size-8);
+	}
+	.xl {
+		font-size: var(--font-size-7);
+	}
+
+	.lg {
+		font-size: var(--font-size-6);
+	}
+	.md {
+		font-size: var(--font-size-5);
+	}
+
+	.sm {
+		font-size: var(--font-size-4);
+	}
+
+	.xs {
+		font-size: var(--font-size-3);
+	}
+</style>

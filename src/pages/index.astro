@@ -1,6 +1,7 @@
 ---
 import Link from '@/components/ui/Link.astro'
 import BaseLayout from '../layouts/BaseLayout.astro'
+import Heading from '@/components/ui/Heading.astro'
 
 const why = [
 	{
@@ -108,8 +109,10 @@ const FAQs = [
 	title='Lonnies Mobile Mechanic'
 	description='Lonnies Mobile Mechanic is a mobile auto repair shop in Tampa, Florida. We offer affordable repairs for your car, truck, or commercial vehicle. Our team of experts is here to help you save money and get your vehicle fixed in no time.'>
 	<section>
-		<h1>Lonnies Mobile Mechanic</h1>
-		<h2>Mobile Auto Repair in Tampa – We Fix It Where It Sits!</h2>
+		<Heading tag='h1' size='h6'>Lonnies Mobile Mechanic</Heading>
+		<Heading tag='h2' size='h1'
+			>Mobile Auto Repair in Tampa – We Fix It Where It Sits!</Heading
+		>
 		<p>
 			At Lonnies Mobile Mechanic, we bring affordable mobile auto repair in
 			Tampa right to your doorstep. SAVE YOUR MONEY and SAY NO TO THE TOW
@@ -119,14 +122,16 @@ const FAQs = [
 	</section>
 
 	<section>
-		<h2>Why Choose Lonnie's Mobile Mechanic?</h2>
+		<Heading tag='h2' size='h2'>Why Choose Lonnie's Mobile Mechanic?</Heading>
 		<a href='#'>Schedule an Appointment</a>
 		<a href='#'>Browse Services</a>
 		<ul>
 			{
 				why.map((item) => (
 					<li>
-						<h3>{item.title}</h3>
+						<Heading tag='h3' size='h5'>
+							{item.title}
+						</Heading>
 						<p>{item.description}</p>
 					</li>
 				))
@@ -135,7 +140,7 @@ const FAQs = [
 	</section>
 
 	<section>
-		<h2>Our Services</h2>
+		<Heading tag='h2' size='h2'>Our Services</Heading>
 		<p>
 			We specialize in a variety of mobile auto repair services throughout
 			Tampa, including:
@@ -145,7 +150,9 @@ const FAQs = [
 			{
 				services.map((item) => (
 					<li>
-						<h3>{item.title}</h3>
+						<Heading tag='h3' size='h5'>
+							{item.title}
+						</Heading>
 						<p>{item.description}</p>
 					</li>
 				))
@@ -154,7 +161,7 @@ const FAQs = [
 	</section>
 
 	<section>
-		<h2>Testimonials</h2>
+		<Heading tag='h2' size='h2'>Testimonials</Heading>
 		<p>
 			Check out our Tampa mobile mechanic reviews to see why we’re trusted by so
 			many
@@ -164,7 +171,9 @@ const FAQs = [
 			{
 				testimonials.map((item) => (
 					<li>
-						<h3>{item.name}</h3>
+						<Heading tag='h3' size='h5'>
+							{item.name}
+						</Heading>
 						<p>{item.review}</p>
 					</li>
 				))
@@ -173,12 +182,14 @@ const FAQs = [
 	</section>
 
 	<section>
-		<h2>FAQs</h2>
+		<Heading tag='h2' size='h2'>FAQs</Heading>
 		<p>Frequently Asked Questions</p>
 		{
 			FAQs.map((item) => (
 				<div>
-					<h5>{item.question}</h5>
+					<Heading tag='h3' size='h6'>
+						{item.question}
+					</Heading>
 					<p>{item.answer}</p>
 				</div>
 			))
@@ -186,12 +197,12 @@ const FAQs = [
 	</section>
 
 	<section>
-		<h2>Service Area</h2>
+		<Heading tag='h2' size='h2'>Service Area</Heading>
 		<div>Map</div>
 	</section>
 
 	<section>
-		<h2>Call Us Now</h2>
+		<Heading tag='h2' size='h2'>Call Us Now</Heading>
 		<p>Lonnies Mobile Mechanic</p>
 		<p>We Fix It Where It Sits</p>
 		<p>813-770-0044</p>
