@@ -2,26 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Heading from '@/components/ui/Heading.astro'
 import Hero from '@/components/home/Hero.astro'
-import { Features } from 'lightningcss'
 import FeaturesBanner from '@/components/home/FeaturesBanner.astro'
-
-const why = [
-	{
-		title: 'Speed & Convenience',
-		description:
-			"Car trouble can happen anywhere, anytime. That’s why we bring fast, reliable mobile auto repair in Tampa straight to you—whether you're at home, work, or stuck on the road. No need for a tow, no waiting at a shop—we fix it where it sits so you can get back on the road faster."
-	},
-	{
-		title: 'Affordable Pricing',
-		description:
-			'Quality repairs shouldn’t break the bank. Our regular service calls start at just $50, with after-hours service at $75. Need help outside a 50-mile radius? No problem—just a small $25 travel fee applies. We provide upfront, transparent pricing with no hidden fees.'
-	},
-	{
-		title: 'Top-Quality Repairs',
-		description:
-			'We take pride in delivering expert mobile mechanic services in Tampa without cutting corners. Whether it’s a quick fix or a complex repair, our skilled mechanics use top-tier tools and parts to ensure your vehicle runs smoothly and safely. Affordable doesn’t mean low-quality—it means you get the best value for your money.'
-	}
-]
+import ServicesBanner from '@/components/home/ServicesBanner.astro'
 
 const services = [
 	{
@@ -110,26 +92,7 @@ const FAQs = [
 <BaseLayout>
 	<Hero />
 	<FeaturesBanner />
-	<section>
-		<Heading tag='h2' size='h2'>Our Services</Heading>
-		<p>
-			We specialize in a variety of mobile auto repair services throughout
-			Tampa, including:
-		</p>
-		<a href='#'>Schedule an Appointment</a>
-		<ul>
-			{
-				services.map((item) => (
-					<li>
-						<Heading tag='h3' size='h5'>
-							{item.title}
-						</Heading>
-						<p>{item.description}</p>
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	<ServicesBanner />
 
 	<section>
 		<Heading tag='h2' size='h2'>Testimonials</Heading>
