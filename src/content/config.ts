@@ -9,4 +9,15 @@ const features = defineCollection({
   }),
 });
 
-export const collections = { features };
+const services = defineCollection({
+  type: "data",
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      description: z.string(),
+      link: z.string(),
+      image: image(),
+    }),
+});
+
+export const collections = { features, services };
