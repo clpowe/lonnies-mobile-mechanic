@@ -1,0 +1,26 @@
+---
+import { getCollection } from 'astro:content'
+import Heading from '../ui/Heading.astro'
+import { Icon } from 'astro-icon/components'
+
+const features = await getCollection('features')
+---
+
+<section>
+	<Heading tag='h2' size='h2'>Why Choose Lonnie's Mobile Mechanic?</Heading>
+	<a href='#'>Schedule an Appointment</a>
+	<a href='#'>Browse Services</a>
+	<ul role='list'>
+		{
+			features.map(({ data: item }) => (
+				<li>
+					<Icon name={item.icon} size={48} />
+					<Heading tag='h3' size='h5'>
+						{item.title}
+					</Heading>
+					<p>{item.description}</p>
+				</li>
+			))
+		}
+	</ul>
+</section>

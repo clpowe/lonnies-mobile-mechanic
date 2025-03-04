@@ -2,6 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 import Heading from '@/components/ui/Heading.astro'
 import Hero from '@/components/home/Hero.astro'
+import { Features } from 'lightningcss'
+import FeaturesBanner from '@/components/home/FeaturesBanner.astro'
 
 const why = [
 	{
@@ -107,24 +109,7 @@ const FAQs = [
 
 <BaseLayout>
 	<Hero />
-	<section>
-		<Heading tag='h2' size='h2'>Why Choose Lonnie's Mobile Mechanic?</Heading>
-		<a href='#'>Schedule an Appointment</a>
-		<a href='#'>Browse Services</a>
-		<ul>
-			{
-				why.map((item) => (
-					<li>
-						<Heading tag='h3' size='h5'>
-							{item.title}
-						</Heading>
-						<p>{item.description}</p>
-					</li>
-				))
-			}
-		</ul>
-	</section>
-
+	<FeaturesBanner />
 	<section>
 		<Heading tag='h2' size='h2'>Our Services</Heading>
 		<p>
