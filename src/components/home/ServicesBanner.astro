@@ -1,0 +1,30 @@
+---
+// Astro Tools
+import { getCollection } from 'astro:content'
+
+// components
+import Heading from '@ui/Heading.astro'
+
+const services = await getCollection('services')
+---
+
+<section>
+	<Heading tag='h2' size='h2'>Our Services</Heading>
+	<p>
+		We specialize in a variety of mobile auto repair services throughout Tampa,
+		including:
+	</p>
+	<a href='#'>Schedule an Appointment</a>
+	<ul role='list'>
+		{
+			services.map(({ data: item }) => (
+				<li>
+					<Heading tag='h3' size='h5'>
+						{item.title}
+					</Heading>
+					<p>{item.description}</p>
+				</li>
+			))
+		}
+	</ul>
+</section>
