@@ -1,0 +1,27 @@
+---
+import Heading from '@ui/Heading.astro'
+import { getCollection } from 'astro:content'
+
+const testimonials = await getCollection('testimonials')
+---
+
+<section>
+	<Heading tag='h2' size='h2'>Testimonials</Heading>
+	<p>
+		Check out our Tampa mobile mechanic reviews to see why we’re trusted by so
+		many
+	</p>
+	<a href='#'>Schedule an Appointment</a>
+	<ul role='list'>
+		{
+			testimonials.map(({ data: item }) => (
+				<li>
+					<Heading tag='h3' size='h5'>
+						{item.name}
+					</Heading>
+					<p>{item.quote}</p>
+				</li>
+			))
+		}
+	</ul>
+</section>

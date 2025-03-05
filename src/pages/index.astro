@@ -1,9 +1,10 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import BaseLayout from '@/layouts/BaseLayout.astro'
 import Heading from '@/components/ui/Heading.astro'
 import Hero from '@/components/home/Hero.astro'
 import FeaturesBanner from '@/components/home/FeaturesBanner.astro'
 import ServicesBanner from '@/components/home/ServicesBanner.astro'
+import TestimonialBanner from '@/components/home/TestimonialBanner.astro'
 
 const services = [
 	{
@@ -93,27 +94,7 @@ const FAQs = [
 	<Hero />
 	<FeaturesBanner />
 	<ServicesBanner />
-
-	<section>
-		<Heading tag='h2' size='h2'>Testimonials</Heading>
-		<p>
-			Check out our Tampa mobile mechanic reviews to see why we’re trusted by so
-			many
-		</p>
-		<a href='#'>Schedule an Appointment</a>
-		<ul>
-			{
-				testimonials.map((item) => (
-					<li>
-						<Heading tag='h3' size='h5'>
-							{item.name}
-						</Heading>
-						<p>{item.review}</p>
-					</li>
-				))
-			}
-		</ul>
-	</section>
+	<TestimonialBanner />
 
 	<section>
 		<Heading tag='h2' size='h2'>FAQs</Heading>
