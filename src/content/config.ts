@@ -28,4 +28,12 @@ const testimonials = defineCollection({
   }),
 });
 
-export const collections = { features, services, testimonials };
+const faq = defineCollection({
+  type: "data",
+  schema: z.object({
+    question: z.string(),
+    answer: z.string(),
+  }),
+});
+
+export const collections = { features, services, testimonials, faq };

@@ -5,89 +5,7 @@ import Hero from '@/components/home/Hero.astro'
 import FeaturesBanner from '@/components/home/FeaturesBanner.astro'
 import ServicesBanner from '@/components/home/ServicesBanner.astro'
 import TestimonialBanner from '@/components/home/TestimonialBanner.astro'
-
-const services = [
-	{
-		title: 'Break Repair',
-		description:
-			"Don't let brake issues slow you down. We'll fix them on the spot!"
-	},
-	{
-		title: 'Tire Repair',
-		description:
-			'Flat tire? We’ve got you covered with quick tire replacements or repairs.'
-	},
-	{
-		title: 'Oil Change',
-		description: 'Get your oil changed without leaving home or work.'
-	},
-	{
-		title: 'Auto Diagnostic Service',
-		description:
-			'Our experts can diagnose issues and get you back on the road swiftly.'
-	},
-	{
-		title: 'Transmission Repair',
-		description:
-			"If you're having transmission issues, we’re equipped to fix it on-site."
-	},
-	{
-		title: 'Fleet Service',
-		description:
-			'Managing a fleet? We handle maintenance and repairs for trucks and commercial vehicles'
-	}
-]
-
-const testimonials = [
-	{
-		name: 'John Doe',
-		review:
-			'I had a flat tire and Lonnies Mobile Mechanic got me back on the road in no time. Highly recommended!'
-	},
-	{
-		name: 'Jane Smith',
-		review:
-			'My car broke down, and Lonnies Mobile Mechanic fixed it in under an hour. Great service!'
-	},
-	{
-		name: 'Bob Johnson',
-		review:
-			'I needed a quick oil change, and Lonnies Mobile Mechanic was prompt and efficient. Highly satisfied!'
-	},
-	{
-		name: 'Emily Davis',
-		review:
-			'My car needed a tune-up, and Lonnies Mobile Mechanic provided expert advice. Great value for money!'
-	}
-]
-
-const FAQs = [
-	{
-		question: 'What areas do you serve?',
-		answer:
-			"We provide mobile auto repair in Tampa and surrounding areas. If you're over 50 miles away, there is a $25 service fee for extended travel."
-	},
-	{
-		question: 'How much does a mobile mechanic service cost?',
-		answer:
-			'Regular service calls: $50 (during normal business hours) After 5 PM: $75 Over 50 miles from our location: Additional $25 travel fee'
-	},
-	{
-		question: 'Do you offer emergency mobile auto repair in Tampa?',
-		answer:
-			'Yes! We provide emergency mobile auto repair to get you back on the road quickly. Call us anytime for fast assistance.'
-	},
-	{
-		question: 'What types of repairs do you handle?',
-		answer:
-			'We offer a full range of mobile mechanic services, including: Mobile brake repair, Mobile tire repair, Car battery replacement,Engine and transmission repair, Oil changes and maintenance, Fleet service for trucks and commercial vehicles,Auto diagnostics and troubleshooting'
-	},
-	{
-		question: 'How do I get a price quote?',
-		answer:
-			'Call us for a free mobile auto repair quote—we provide transparent pricing with no hidden fees.'
-	}
-]
+import FAQ from '@/components/home/FAQ.astro'
 ---
 
 <BaseLayout>
@@ -95,21 +13,7 @@ const FAQs = [
 	<FeaturesBanner />
 	<ServicesBanner />
 	<TestimonialBanner />
-
-	<section>
-		<Heading tag='h2' size='h2'>FAQs</Heading>
-		<p>Frequently Asked Questions</p>
-		{
-			FAQs.map((item) => (
-				<div>
-					<Heading tag='h3' size='h6'>
-						{item.question}
-					</Heading>
-					<p>{item.answer}</p>
-				</div>
-			))
-		}
-	</section>
+	<FAQ />
 
 	<section>
 		<Heading tag='h2' size='h2'>Service Area</Heading>

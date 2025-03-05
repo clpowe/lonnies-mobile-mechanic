@@ -1,0 +1,21 @@
+---
+import Heading from '@ui/Heading.astro'
+import { getCollection } from 'astro:content'
+
+const FAQs = await getCollection('faq')
+---
+
+<section>
+	<Heading tag='h2' size='h2'>FAQs</Heading>
+	<p>Frequently Asked Questions</p>
+	{
+		FAQs.map(({ data: { question, answer } }) => (
+			<div>
+				<Heading tag='h3' size='h6'>
+					{question}
+				</Heading>
+				<p>{answer}</p>
+			</div>
+		))
+	}
+</section>
