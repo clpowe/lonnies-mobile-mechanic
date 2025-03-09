@@ -17,7 +17,7 @@ import FAQ from '@/components/home/FAQ.astro'
 
 	<section>
 		<Heading tag='h2' size='h2'>Service Area</Heading>
-		<div>Map</div>
+		<div id='map'></div>
 	</section>
 
 	<section>
@@ -29,3 +29,29 @@ import FAQ from '@/components/home/FAQ.astro'
 		<div>Form that sends a text</div>
 	</section>
 </BaseLayout>
+
+<script>
+	var center = { lat: 27.964157, lng: -82.452606 }
+	var map = L.map('map', {
+		zoomControl: false,
+		dragging: false,
+		scrollWheelZoom: false
+	}).setView([27.964157, -82.452606], 10)
+	L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+		maxZoom: 10
+	}).addTo(map)
+	var circle = L.circle([27.964157, -82.452606], {
+		color: 'red',
+		fillColor: '#f03',
+		fillOpacity: 0.3,
+		radius: 30000
+	}).addTo(map)
+</script>
+
+<style>
+	/* Set the height of the map container */
+	#map {
+		width: 100%;
+		aspect-ratio: 5/2;
+	}
+</style>
