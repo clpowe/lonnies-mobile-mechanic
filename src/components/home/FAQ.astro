@@ -8,14 +8,18 @@ const FAQs = await getCollection('faq')
 <section>
 	<Heading tag='h2' size='h2'>FAQs</Heading>
 	<p>Frequently Asked Questions</p>
+	<div class="accordion">
 	{
 		FAQs.map(({ data: { question, answer } }) => (
-			<div>
+			<details >
+				<summary>
 				<Heading tag='h3' size='h6'>
 					{question}
 				</Heading>
+				</summary>
 				<p>{answer}</p>
-			</div>
+			</details>
 		))
 	}
+	</div>	
 </section>
