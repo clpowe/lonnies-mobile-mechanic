@@ -1,25 +1,62 @@
 ---
-import Heading from '@ui/Heading.astro'
-import { getCollection } from 'astro:content'
+import Heading from "@ui/Heading.astro";
+import { getCollection } from "astro:content";
 
-const FAQs = await getCollection('faq')
+const FAQs = await getCollection("faq");
 ---
 
 <section>
-	<Heading tag='h2' size='h2'>FAQs</Heading>
+	<Heading tag="h2" size="h2">FAQs</Heading>
 	<p>Frequently Asked Questions</p>
 	<div class="accordion">
-	{
-		FAQs.map(({ data: { question, answer } }) => (
-			<details >
-				<summary>
-				<Heading tag='h3' size='h6'>
-					{question}
-				</Heading>
-				</summary>
-				<p>{answer}</p>
-			</details>
-		))
-	}
-	</div>	
+		{
+			FAQs.map(({ data: { question, answer } }) => (
+				<details>
+					<summary>
+						<Heading tag="h3" size="h5">
+							{question}
+						</Heading>
+					</summary>
+					<p>{answer}</p>
+				</details>
+			))
+		}
+	</div>
 </section>
+
+<style>
+	details {
+		border: none;
+		padding: 0;
+	}
+
+	details::details-content {
+		overflow: hidden;
+		height: 0;
+		transition:
+			height 0.3s ease,
+			content-visibility 0.3s ease;
+		transition-behavior: allow-descrete;
+	}
+
+	details[open]::details-content {
+		height: auto;
+		transition-behavior: allow-descrete;
+	}
+
+	details::details-content {
+		height: 0;
+		transition-behavior: allow-descrete;
+	}
+
+	details summary {
+		list-style: none;
+		cursor: pointer;
+		display: flex;
+		background: none;
+	}
+	details summary::-webkit-details-marker {
+		display: none;
+		background: none;
+	}
+</style>
